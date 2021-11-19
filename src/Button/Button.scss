@@ -1,0 +1,17 @@
+@import '../base.scss';
+
+.button {
+    width: 35%;
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    background-color: $background-color;
+    color: $orange;
+    border: 5px solid $orange;
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $green;
+    }
+}

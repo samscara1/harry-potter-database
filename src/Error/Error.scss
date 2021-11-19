@@ -1,0 +1,15 @@
+@import '../base.scss';
+
+.error-page {
+    height: 100vh;
+    background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.error-msg {
+    font-size: 150px;
+    color: $orange;
+}

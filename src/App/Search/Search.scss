@@ -1,0 +1,17 @@
+@import '../../base.scss';
+
+.search {
+    width: 71%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 5px solid $orange;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+
+    &::placeholder {
+        color: lightgray;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+}

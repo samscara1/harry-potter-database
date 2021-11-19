@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'MagicSchoolOne';
+  src: url("../fonts//MagicSchoolOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  font-family: 'MagicSchoolOne';
+}
+
+.wrapper {
+  text-align: center;
+  background: #6e3838;
+  min-height: 100vh;
+}
+
+.characters-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-form__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.category-btn:hover {
+  background-color: darkolivegreen;
+}
+/*# sourceMappingURL=App.css.map */

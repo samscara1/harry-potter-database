@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'MagicSchoolOne';
+  src: url("../fonts//MagicSchoolOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.character-page {
+  background-color: #6e3838;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.character-page__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.character-page__image {
+  width: 200px;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 5px solid orange;
+  margin: 50px;
+}
+
+.character-page__description {
+  color: orange;
+  font-size: 30px;
+  line-height: 0.5vh;
+}
+
+.character-page__name {
+  color: orange;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=CharacterPage.css.map */

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'MagicSchoolOne';
+  src: url("../fonts//MagicSchoolOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.button {
+  width: 35%;
+  margin: 15px;
+  padding: 10px;
+  border: none;
+  background-color: #6e3838;
+  color: orange;
+  border: 5px solid orange;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: darkolivegreen;
+}
+/*# sourceMappingURL=Button.css.map */

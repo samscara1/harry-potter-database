@@ -1,0 +1,30 @@
+@import '../../base.scss';
+
+.image {
+    width: 200px;
+    height: 270px;
+    object-fit: cover;
+    border: 5px solid $orange;
+
+    &.image_clickable {
+        border: none
+    }
+
+    &__name {
+        font-size: 28px;
+        color: $orange;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid $orange;
+        margin: 50px;
+        text-decoration:none;
+    
+        &:hover {
+            background-color: $green;
+        }
+    }
+}
+

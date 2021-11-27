@@ -7,6 +7,8 @@ import { CharacterCard } from './CharacterCard/CharacterCard'
 import { Header } from './Header/Header'
 import { Button } from '../Button/Button';
 import { selectCharacters } from '../store/selectors';
+import { Image } from '../UI/Image/Image';
+import { modifyString } from '../helpers/helpers';
  
 import { fetchCharacters } from '../store/charactersSlice'
 
@@ -57,11 +59,17 @@ function App() {
           .map((character) => {
             const {name, image} = character
             return (
-              <CharacterCard
-                name={name} 
-                image={image}
-                key={nanoid()}
-              />
+              <Image 
+              key={nanoid}
+              isClickable 
+              charImg={image} 
+              alt={name}
+              charLink={`character/${modifyString(name, ' ', '-').toLowerCase()}`}/>
+              // <CharacterCard
+              //   name={name} 
+              //   image={image}
+              //   key={nanoid()}
+              // />
             )
           })}
         </section>

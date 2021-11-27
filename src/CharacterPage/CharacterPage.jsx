@@ -6,6 +6,7 @@ import { modifyString } from '../helpers/helpers'
 import { Button } from "../Button/Button";
 import { Error } from '../Error/Error';
 import { selectCharacters } from '../store/selectors';
+import { Image } from '../UI/Image/Image';
 
 import no_avatar from '../assets/no_avatar.png'
 
@@ -41,11 +42,17 @@ export const CharacterPage = () => {
         <section className='character-page'>
             {character.name && <p className='character-page__name'>{character.name}</p>}
             <div className='character-page__wrapper'>
-                <img 
+                {/* <img 
                     src={character.image || no_avatar} 
                     alt={character.name} 
                     className='character-page__image'>
-                </img>
+                </img> */}
+
+                <Image 
+                    charImg={ character.image }
+                    alt={character.name}
+                    />
+
                 <div className='character-page__description'>
                     {character.species && <p>species: {character.species}</p>}
                     {character.gender && <p>gender: {character.gender}</p>}

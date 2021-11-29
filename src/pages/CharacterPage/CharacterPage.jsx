@@ -7,6 +7,7 @@ import { Button } from '../../UI/Button/Button';
 import { Error } from '../Error/Error';
 import { selectCharacters } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
+import { CharacterDescription } from './components/CharacterDescription';
 
 import './CharacterPage.scss'
 
@@ -40,28 +41,12 @@ export const CharacterPage = () => {
         <section className='character-page'>
             {character.name && <p className='character-page__name'>{character.name}</p>}
             <div className='character-page__wrapper'>
-                {/* <img 
-                    src={character.image || no_avatar} 
-                    alt={character.name} 
-                    className='character-page__image'>
-                </img> */}
 
                 <Image 
                     charImg={ character.image }
                     alt={character.name}
                     />
-
-                <div className='character-page__description'>
-                    {character.species && <p>species: {character.species}</p>}
-                    {character.gender && <p>gender: {character.gender}</p>}
-                    {character.house && <p>house: {character.house}</p>}
-                    {(character.yearOfBirth || character.yearOfBirth === 0 ) && <p>year of birth: {character.yearOfBirth}</p>}
-                    {character.ancestry && <p>ancestry: {character.ancestry}</p>}
-                    {character.patronus && <p>patronus: {character.patronus}</p>}
-                    {character.wand && character.wand.wood && <p>wand made of: {character.wand.wood}</p>}
-                    {character.wand && character.wand.core && <p>core of wand: {character.wand.core}</p>}
-                    {character.wand && character.wand.length && <p>length of wand: {character.wand.length}"</p>}
-                </div>
+            <CharacterDescription {...character} />
             </div>
                 <Button clickFunction={handleClick} text={'go back'} />
         </section>  

@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { Link } from 'react-router-dom';
 import { nanoid } from "nanoid";
 
-import defaultImage from '../../assets/no_avatar.png'
+import defaultImage from '../../static/assets/no_avatar.png'
 
 import './style.scss'
 
@@ -14,7 +14,9 @@ export const Image = ({
     charLink
 }) => {
 
-    const imageClass = cn('image', {image_clickable: isClickable})
+    const imageClass = cn('image', {
+        image_clickable: isClickable
+    })
 
     if (isClickable) {
         return(
@@ -36,7 +38,7 @@ export const Image = ({
 
     return (
         <img
-            src={charImg}
+            src={charImg || defaultImage}
             alt={alt}
             className={imageClass}>
         </img>

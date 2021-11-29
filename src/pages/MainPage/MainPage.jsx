@@ -2,17 +2,16 @@ import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from 'nanoid';
 
-import { Search } from './Search/Search'
-import { CharacterCard } from './CharacterCard/CharacterCard'
-import { Header } from './Header/Header'
-import { Button } from '../Button/Button';
-import { selectCharacters } from '../store/selectors';
-import { Image } from '../UI/Image/Image';
-import { modifyString } from '../helpers/helpers';
+import { Search } from '../../UI/Search/Search'
+import { Header } from './components/Header/Header'
+import { Button } from '../../UI/Button/Button'
+import { selectCharacters } from '../../store/selectors';
+import { Image } from '../../UI/Image/Image';
+import { modifyString } from '../../helpers/helpers';
  
-import { fetchCharacters } from '../store/charactersSlice'
+import { fetchCharacters } from '../../store/charactersSlice'
 
-import './App.css';
+import './MainPage.scss';
 
 function App() {
   const [search, setSearch] = useState('')
@@ -65,11 +64,6 @@ function App() {
               charImg={image} 
               alt={name}
               charLink={`character/${modifyString(name, ' ', '-').toLowerCase()}`}/>
-              // <CharacterCard
-              //   name={name} 
-              //   image={image}
-              //   key={nanoid()}
-              // />
             )
           })}
         </section>

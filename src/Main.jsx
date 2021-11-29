@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import MainPage from './pages/MainPage/MainPage';
+import { MainPage } from './pages/MainPage/MainPage';
 import { CharacterPage } from './pages/CharacterPage/CharacterPage'
 import { Error } from './pages/Error/Error'
 

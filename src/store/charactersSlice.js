@@ -11,13 +11,18 @@ export const fetchCharacters = createAsyncThunk(
 )
 
 const initialState = {
-    characters: []
+    characters: [],
+    searchValue: ''
 }
 
 const charactersSlice = createSlice({
     name: 'characters',
     initialState,
-    reducers: {},
+    reducers: {
+        changeSearchValue: (state, { payload: { value } }) => {
+            state.searchValue = value
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchCharacters.fulfilled, (state, action) => {
             state.characters = action.payload
@@ -25,6 +30,6 @@ const charactersSlice = createSlice({
     }
 })
 
-export const {updateCharacters} = charactersSlice.actions;
+export const { changeSearchValue } = charactersSlice.actions;
 
 export default charactersSlice.reducer;

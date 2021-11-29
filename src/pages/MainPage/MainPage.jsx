@@ -2,23 +2,22 @@ import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from 'nanoid';
 
-import { Search } from '../../UI/Search/Search'
+import { Input } from '../../UI/Input/Input'
 import { Header } from './components/Header/Header'
 import { Button } from '../../UI/Button/Button'
-import { selectCharacters } from '../../store/selectors';
+import { selectCharacters, selectSearchValue } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
 import { modifyString } from '../../helpers/helpers';
  
-import { fetchCharacters } from '../../store/charactersSlice'
+import { changeSearchValue, fetchCharacters } from '../../store/charactersSlice'
 
 import './MainPage.scss';
 
-function App() {
-  const [search, setSearch] = useState('')
-
+export const MainPage = () => {
   const dispatch = useDispatch()
 
   const characters = useSelector(selectCharacters)
+  const value = useSelector(selectSearchValue)
 
   useEffect(() => {
     dispatch(fetchCharacters())
@@ -32,15 +31,15 @@ function App() {
     dispatch(fetchCharacters('staff'))
   }
 
-  const getSearch = (text) => {
-    setSearch(text)
+  const handleChange = ({ target: { value } }) => {
+    dispatch(changeSearchValue({ value }))
   }
 
   return (
     <main className='wrapper'>
         <Header />
         <section className='search-form'>
-          <Search search={search} getSearch={getSearch} />
+          <Input value={value} handleChange={handleChange} placeholder='Search by Name or House'/>
           <div className='search-form__buttons'>
             <Button  clickFunction={handleStudentsClick} text={'Students'} />
             <Button  clickFunction={handleStaffClick} text={'Staff'} />
@@ -51,8 +50,8 @@ function App() {
           characters
           .filter(char => {
             return(
-              char.name.toLowerCase().includes(search.toLowerCase()) ||
-              char.house.toLowerCase().includes(search.toLowerCase())
+              char.name.toLowerCase().includes(value.toLowerCase()) ||
+              char.house.toLowerCase().includes(value.toLowerCase())
             )
           })
           .map((character) => {
@@ -70,5 +69,3 @@ function App() {
     </main>
   )
 }
-
-export default App;

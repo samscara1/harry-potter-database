@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { modifyString } from '../helpers/helpers'
-import { Button } from "../Button/Button";
+import { modifyString } from '../../helpers/helpers'
+import { Button } from '../../UI/Button/Button';
 import { Error } from '../Error/Error';
-import { selectCharacters } from '../store/selectors';
-import { Image } from '../UI/Image/Image';
+import { selectCharacters } from '../../store/selectors';
+import { Image } from '../../UI/Image/Image';
 
-import no_avatar from '../assets/no_avatar.png'
-
-import './CharacterPage.css'
+import './CharacterPage.scss'
 
 export const CharacterPage = () => {
     const [character, setCharacter] = useState({})

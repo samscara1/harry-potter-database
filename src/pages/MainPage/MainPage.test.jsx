@@ -2,9 +2,9 @@ import React from 'react';
 import { setupServer } from 'msw/node'
 import userEvent from '@testing-library/user-event';
 
-import { render, screen } from '../utils/withReduxAndRouter';
+import { render, screen } from '../../utils/withReduxAndRouter';
 
-import { charactersHandler, studentsHandler, staffHandler } from '../utils/handlers';
+import { charactersHandler, studentsHandler, staffHandler } from '../../utils/handlers';
 
 import App from './App';
 

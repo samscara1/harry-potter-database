@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { fetchCharacters } from '../../store/charactersSlice'
+import { fetchCharacters } from '../../../../store/charactersSlice'
 
-import './Header.css'
+import './Header.scss'
 
 export const Header = () => {
     

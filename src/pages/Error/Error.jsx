@@ -1,9 +1,9 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Button } from '../Button/Button'
+import { Button } from '../../UI/Button/Button'
 
-import './Error.css'
+import './Error.scss'
 
 export const Error = () => {
 

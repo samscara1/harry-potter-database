@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import App from './App/App';
-import { CharacterPage } from './CharacterPage/CharacterPage'
-import { Error } from './Error/Error'
+import MainPage from './pages/MainPage/MainPage';
+import { CharacterPage } from './pages/CharacterPage/CharacterPage'
+import { Error } from './pages/Error/Error'
 
 export const Main = () => {
 
@@ -10,7 +10,7 @@ export const Main = () => {
         <Router>
             <Switch>
                 <Route exact path='/'>
-                    <App   />
+                    <MainPage />
                 </Route>
                 <Route exact path='/character/:id' children={<CharacterPage />} />
                 <Route exact path='*'>

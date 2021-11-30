@@ -1,14 +1,13 @@
-import { React, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from 'nanoid';
 
 import { Input } from '../../UI/Input/Input'
 import { Header } from './components/Header/Header'
-import { Button } from '../../UI/Button/Button'
-import { ButtonGroup } from '../../UI/ButtonGroup/ButtonGroup';
 import { selectCharacters, selectSearchValue } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
 import { modifyString } from '../../helpers/helpers';
+import { FilterPanel } from './components/FilterPanel/FilterPanel';
  
 import { changeSearchValue, fetchCharacters } from '../../store/charactersSlice'
 
@@ -24,14 +23,6 @@ export const MainPage = () => {
     dispatch(fetchCharacters())
   }, [])
 
-  const handleStudentsClick = async() => {
-    dispatch(fetchCharacters('students'))
-  }
-
-  const handleStaffClick = async() => {
-    dispatch(fetchCharacters('staff'))
-  }
-
   const handleChange = ({ target: { value } }) => {
     dispatch(changeSearchValue({ value }))
   }
@@ -41,10 +32,7 @@ export const MainPage = () => {
         <Header />
         <section className='search-form'>
           <Input value={value} handleChange={handleChange} placeholder='Search by Name or House'/>
-          <ButtonGroup>
-            <Button  handleCLick={handleStudentsClick} text={'Students'} />
-            <Button  handleCLick={handleStaffClick} text={'Staff'} />
-          </ButtonGroup>
+          <FilterPanel />
         </section>
         <section className='characters-list'>
           {

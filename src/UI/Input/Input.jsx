@@ -1,7 +1,6 @@
 import './Input.scss'
 
 export const Input = ({ value, handleChange, placeholder }) => {
-
     return ( 
         <input 
             value={value} 

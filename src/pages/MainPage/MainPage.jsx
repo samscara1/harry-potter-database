@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { Input } from '../../UI/Input/Input'
 import { Header } from './components/Header/Header'
 import { Button } from '../../UI/Button/Button'
+import { ButtonGroup } from '../../UI/ButtonGroup/ButtonGroup';
 import { selectCharacters, selectSearchValue } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
 import { modifyString } from '../../helpers/helpers';
@@ -40,10 +41,10 @@ export const MainPage = () => {
         <Header />
         <section className='search-form'>
           <Input value={value} handleChange={handleChange} placeholder='Search by Name or House'/>
-          <div className='search-form__buttons'>
-            <Button  clickFunction={handleStudentsClick} text={'Students'} />
-            <Button  clickFunction={handleStaffClick} text={'Staff'} />
-          </div>
+          <ButtonGroup>
+            <Button  handleCLick={handleStudentsClick} text={'Students'} />
+            <Button  handleCLick={handleStaffClick} text={'Staff'} />
+          </ButtonGroup>
         </section>
         <section className='characters-list'>
           {

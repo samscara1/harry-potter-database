@@ -16,7 +16,7 @@ export const Error = () => {
     return(
         <section className='error-page'>
             <p className='error-msg'>No muggles allowed 404</p>
-            <Button clickFunction={handleClick} text={'go back'} />
+            <Button handleCLick={handleClick} text={'go back'} />
         </section>
     )
 }

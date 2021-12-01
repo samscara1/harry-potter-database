@@ -3,11 +3,11 @@ import { render, screen } from '@testing-library/react';
 import { Button } from './Button'
 
 describe('Button component', ()=>{
-  test('button renders', ()=> {
+    test('button renders', ()=> {
     
-    render(<Button text={'go back'}/>)
+        render(<Button text={'go back'}/>)
   
-  expect(screen.getByRole('button')).toBeInTheDocument()
-  expect(screen.getByText(/go back/)).toBeInTheDocument()
-  })
+        expect(screen.getByRole('button')).toBeInTheDocument()
+        expect(screen.getByText(/go back/)).toBeInTheDocument()
+    })
 })

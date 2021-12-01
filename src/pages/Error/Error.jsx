@@ -6,7 +6,6 @@ import { Button } from '../../UI/Button/Button'
 import './style.scss'
 
 export const Error = () => {
-
     const history = useHistory()
 
     const handleClick = () => {

@@ -5,13 +5,13 @@ import {Header} from './Header';
 import store from '../../../../store'
 
 describe('Header component', () => {
-  test('header renders', () => {
-    render(
-        <Provider store={store}>
-            <Header />
-        </Provider>
-    )
+    test('header renders', () => {
+        render(
+            <Provider store={store}>
+                <Header />
+            </Provider>
+        )
   
-  expect(screen.getByText(/harry potter database/i)).toBeInTheDocument()
-  })
+        expect(screen.getByText(/harry potter database/i)).toBeInTheDocument()
+    })
 })

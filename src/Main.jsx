@@ -5,7 +5,6 @@ import { CharacterPage } from './pages/CharacterPage/CharacterPage'
 import { Error } from './pages/Error/Error'
 
 export const Main = () => {
-
     return ( 
         <Router>
             <Switch>

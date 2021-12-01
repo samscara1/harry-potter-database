@@ -11,6 +11,7 @@ import './style.scss'
 
 export const Header = () => {
     const dispatch = useDispatch()
+    
     const value = useSelector(selectSearchValue)
 
     const handleChange = ({ target: { value } }) => {

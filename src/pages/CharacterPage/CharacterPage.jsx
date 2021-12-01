@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { modifyString } from '../../helpers/helpers'
 import { Button } from '../../UI/Button/Button';
 import { Error } from '../Error/Error';
-import { selectCharacters } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
+
+import { selectCharacters } from '../../store/selectors';
 import { CharacterDescription } from './components/CharacterDescription';
+
+import { modifyString } from '../../helpers/helpers'
 
 import './style.scss'
 
@@ -37,7 +39,8 @@ export const CharacterPage = () => {
     if (isFound) {
         return <Error />
     }
-    return (  
+
+    return ( 
         <section className='character-page'>
             {character.name && <p className='character-page__name'>{character.name}</p>}
             <div className='character-page__wrapper'>

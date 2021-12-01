@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from 'nanoid';
 
-import { Input } from '../../UI/Input/Input'
 import { Header } from './components/Header/Header'
-import { selectCharacters, selectSearchValue } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
-import { modifyString } from '../../helpers/helpers';
-import { FilterPanel } from './components/FilterPanel/FilterPanel';
  
-import { changeSearchValue, fetchCharacters } from '../../store/charactersSlice'
+import { fetchCharacters } from '../../store/charactersSlice'
+import { selectCharacters, selectSearchValue } from '../../store/selectors';
+
+import { modifyString } from '../../helpers/helpers';
 
 import './MainPage.scss';
 
@@ -23,17 +22,9 @@ export const MainPage = () => {
     dispatch(fetchCharacters())
   }, [])
 
-  const handleChange = ({ target: { value } }) => {
-    dispatch(changeSearchValue({ value }))
-  }
-
   return (
     <main className='wrapper'>
         <Header />
-        <section className='search-form'>
-          <Input value={value} handleChange={handleChange} placeholder='Search by Name or House'/>
-          <FilterPanel />
-        </section>
         <section className='characters-list'>
           {
           characters

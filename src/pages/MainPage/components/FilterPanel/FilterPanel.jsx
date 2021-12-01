@@ -9,7 +9,7 @@ import { fetchCharacters } from "../../../../store/charactersSlice"
 export const FilterPanel = () => {
     const dispatch = useDispatch()
 
-    const handleCLick = (tag) => {
+    const handleClick = (tag) => {
         if (tag === 'All') {
             tag = ''
         }
@@ -18,9 +18,9 @@ export const FilterPanel = () => {
 
     return (
         <ButtonGroup>
-            <Button handleCLick={handleCLick} text={'All'}/>
-            <Button  handleCLick={handleCLick} text={'Students'} />
-            <Button  handleCLick={handleCLick} text={'Staff'} />
+            <Button handleClick={handleClick} text={'All'}/>
+            <Button  handleClick={handleClick} text={'Students'} />
+            <Button  handleClick={handleClick} text={'Staff'} />
         </ButtonGroup>
     )
 }

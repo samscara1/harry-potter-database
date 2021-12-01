@@ -1,9 +1,9 @@
 import './Button.scss'
 
-export const Button = ({handleCLick, text}) => {
+export const Button = ({ handleClick, text }) => {
     return (
         <button 
-            onClick={()=>handleCLick(text)} 
+            onClick={()=>handleClick(text)} 
             className='button' >
             {text}
         </button>

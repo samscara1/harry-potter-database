@@ -9,7 +9,7 @@ import { selectCharacters } from '../../store/selectors';
 import { Image } from '../../UI/Image/Image';
 import { CharacterDescription } from './components/CharacterDescription';
 
-import './CharacterPage.scss'
+import './style.scss'
 
 export const CharacterPage = () => {
     const [character, setCharacter] = useState({})

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import { Button } from '../../UI/Button/Button'
 
-import './Error.scss'
+import './style.scss'
 
 export const Error = () => {
 

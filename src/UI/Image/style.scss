@@ -1,10 +1,10 @@
-@import '../../base.scss';
+@import '../../variables.scss';
 
 .image {
     width: 200px;
     height: 270px;
     object-fit: cover;
-    border: 5px solid $orange;
+    border: 5px solid $img-border;
 
     &.image_clickable {
         border: none
@@ -12,18 +12,18 @@
 
     &__name {
         font-size: 28px;
-        color: $orange;
+        color: $img-name;
     }
 
     &__link {
         display: flex;
         flex-direction: column;
-        border: 5px solid $orange;
+        border: 5px solid $img-link-border;
         margin: 50px;
         text-decoration:none;
     
         &:hover {
-            background-color: $green;
+            background-color: $img-hover;
         }
     }
 }

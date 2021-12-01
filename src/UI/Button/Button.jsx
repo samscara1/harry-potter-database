@@ -1,4 +1,4 @@
-import './Button.scss'
+import './style.scss'
 
 export const Button = ({ handleClick, text }) => {
     return (

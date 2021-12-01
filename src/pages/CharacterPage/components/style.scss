@@ -1,7 +1,7 @@
-@import '../../../base.scss';
+@import '../../../variables.scss';
 
 .character-description {
-    color: $orange;
+    color: $char-description;
     font-size: 30px;
     line-height:0.5vh;
     margin-left: 50px;

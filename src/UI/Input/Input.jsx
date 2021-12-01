@@ -1,4 +1,4 @@
-import './Input.scss'
+import './style.scss'
 
 export const Input = ({ value, handleChange, placeholder }) => {
     return ( 

@@ -48,7 +48,7 @@ export const CharacterPage = () => {
                     />
             <CharacterDescription {...character} />
             </div>
-                <Button clickFunction={handleClick} text={'go back'} />
+                <Button handleClick={handleClick} text={'go back'} />
         </section>  
      );
 }

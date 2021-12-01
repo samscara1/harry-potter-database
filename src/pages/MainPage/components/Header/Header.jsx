@@ -1,17 +1,31 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { fetchCharacters } from '../../../../store/charactersSlice'
+import { Input } from '../../../../UI/Input/Input'
+import { FilterPanel } from '../FilterPanel/FilterPanel';
+
+import { selectSearchValue } from '../../../../store/selectors';
+import { changeSearchValue } from '../../../../store/charactersSlice'
 
 import './Header.scss'
 
 export const Header = () => {
-    
     const dispatch = useDispatch()
+    const value = useSelector(selectSearchValue)
 
-    const handleClick = () => {
-        dispatch(fetchCharacters())
-    }
+    const handleChange = ({ target: { value } }) => {
+        dispatch(changeSearchValue({ value }))
+      }
 
-    return <h1 onClick={handleClick} className='header'>Harry Potter Database</h1>
+    return (
+        <header>
+            <h1 className='header'>Harry Potter Database</h1>
+            <Input 
+                value={value} 
+                handleChange={handleChange} 
+                placeholder='Search by Name or House'
+            />
+            <FilterPanel />
+        </header>
+    )
 }

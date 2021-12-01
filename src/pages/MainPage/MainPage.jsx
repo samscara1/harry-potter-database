@@ -10,7 +10,7 @@ import { selectCharacters, selectSearchValue } from '../../store/selectors';
 
 import { modifyString } from '../../helpers/helpers';
 
-import './MainPage.scss';
+import './style.scss';
 
 export const MainPage = () => {
   const dispatch = useDispatch()

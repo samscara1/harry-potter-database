@@ -1,4 +1,4 @@
-@import '../../base.scss';
+@import '../../variables.scss';
 
 .error-page {
     height: 100vh;
@@ -11,5 +11,5 @@
 
 .error-msg {
     font-size: 150px;
-    color: $orange;
+    color: $error-msg;
 }

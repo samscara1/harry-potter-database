@@ -7,7 +7,7 @@ import { FilterPanel } from '../FilterPanel/FilterPanel';
 import { selectSearchValue } from '../../../../store/selectors';
 import { changeSearchValue } from '../../../../store/charactersSlice'
 
-import './Header.scss'
+import './style.scss'
 
 export const Header = () => {
     const dispatch = useDispatch()

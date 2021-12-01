@@ -1,4 +1,4 @@
-@import '../../base.scss';
+@import '../../variables.scss';
 
 .button {
     width: 23%;
@@ -6,12 +6,12 @@
     padding: 10px;
     border: none;
     background-color: $background-color;
-    color: $orange;
-    border: 5px solid $orange;
+    color: $btn-name;
+    border: 5px solid $btn-border;
     font-size: 30px;
     cursor: pointer;
 
     &:hover {
-        background-color: $green;
+        background-color: $btn-hover;
     }
 }

@@ -1,8 +1,8 @@
 import { CharacterPage } from './CharacterPage'
-import { characters } from '../utils/mockFetch';
+import { characters } from '../../msw-config/mockFetch';
 
 import * as reactRedux from 'react-redux'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../../utils/withReduxAndRouter';
 
 jest.mock('react-router-dom', () => ({ 
     ...jest.requireActual('react-router-dom'),

@@ -1,17 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import { render, screen } from '../../../../utils/withReduxAndRouter'
 
-import {Header} from './Header';
-import store from '../../../../store'
+import { Header } from './Header';
 
 describe('Header component', () => {
     test('header renders', () => {
-        render(
-            <Provider store={store}>
-                <Header />
-            </Provider>
-        )
+        render(<Header />)
   
-        expect(screen.getByText(/harry potter database/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading',{name: /harry potter database/i})).toBeInTheDocument()
+        expect(screen.getByRole('button', {name: /students/i})).toBeInTheDocument()
+        expect(screen.getByRole('button', {name: /staff/i})).toBeInTheDocument()
+        expect(screen.getByPlaceholderText('Search by Name or House')).toBeInTheDocument()
     })
+
+    
 })

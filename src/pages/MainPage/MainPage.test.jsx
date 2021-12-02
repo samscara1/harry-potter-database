@@ -4,9 +4,9 @@ import userEvent from '@testing-library/user-event';
 
 import { render, screen } from '../../utils/withReduxAndRouter';
 
-import { charactersHandler, studentsHandler, staffHandler } from '../../mocks/handlers';
+import { charactersHandler, studentsHandler, staffHandler } from '../../msw-config/handlers';
 
-import App from './App';
+import { MainPage } from './MainPage';
 
 export const handlers = [
     charactersHandler,
@@ -20,23 +20,19 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-describe('App component', () => {
+describe('MainPage component', () => {
 
-    test('App renders', async () => {
+    test('MainPage renders', async () => {
 
-        render(<App/>)
+        render(<MainPage/>)
 
-        expect(screen.getByRole('heading',{name: /harry potter database/i})).toBeInTheDocument()
-        expect(screen.queryByRole('button', {name: /students/i})).toBeInTheDocument()
-        expect(screen.queryByRole('button', {name: /staff/i})).toBeInTheDocument()
-        expect(screen.queryByRole('searchbox')).toBeInTheDocument()
         expect(screen.queryByText(/minerva/i)).not.toBeInTheDocument()
         expect(await screen.findByText(/minerva/i)).toBeInTheDocument()
     })
 
     test('students button works', async () => {
 
-        render(<App/>)
+        render(<MainPage/>)
 
         expect(screen.queryByText(/minerva/i)).not.toBeInTheDocument()
 
@@ -48,7 +44,7 @@ describe('App component', () => {
 
     test('staff button works', async () => {
 
-        render(<App/>)
+        render(<MainPage/>)
 
         expect( screen.queryByText(/minerva/i)).not.toBeInTheDocument()
 
@@ -60,11 +56,11 @@ describe('App component', () => {
 
     test('search works properly', async () => {
 
-        render(<App/>)
+        render(<MainPage/>)
 
         expect(screen.queryByText(/minerva/i)).not.toBeInTheDocument()
 
-        userEvent.type( screen.getByRole('searchbox'), 'minerva')
+        userEvent.type( screen.getByPlaceholderText('Search by Name or House'), 'minerva')
 
         expect( await screen.findByText(/minerva/i)).toBeInTheDocument()
         expect( await screen.queryByText(/norris/i)).not.toBeInTheDocument()

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Button } from '../../UI/Button/Button';
 import { Error404 } from '../Error404/Error404';
 import { Image } from '../../UI/Image/Image';
-import { CharacterDescription } from './components/CharacterDescription';
+import { CharacterDescription } from './components/CharacterDescription/CharacterDescription';
 
 import { selectCharacters } from '../../store/selectors';
 
@@ -33,7 +33,6 @@ export const CharacterPage = () => {
     const handleClick = () => {
         history.push('/')
     }
-    console.log(character)
 
     return (
         <>

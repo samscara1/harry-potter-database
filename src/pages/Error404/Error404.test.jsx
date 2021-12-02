@@ -1,14 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { render, screen } from '../../utils/withReduxAndRouter';
 
-import {Error} from './Error404';
+import { Error404 } from './Error404';
 
 describe('Error component', () => {
     test('error msg renders', () => {
         render(
-            <BrowserRouter>
-                <Error />
-            </BrowserRouter>
+                <Error404 />
         )
   
         expect(screen.getByText(/no muggles allowed 404/i)).toBeInTheDocument()

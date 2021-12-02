@@ -6,7 +6,7 @@ import { Header } from './components/Header/Header'
 import { Image } from '../../UI/Image/Image';
  
 import { fetchCharacters } from '../../store/charactersSlice'
-import { selectCharacters, selectFilteredCharacters, selectSearchValue } from '../../store/selectors';
+import { selectFilteredCharacters } from '../../store/selectors';
 
 import { modifyString } from '../../helpers/helpers';
 

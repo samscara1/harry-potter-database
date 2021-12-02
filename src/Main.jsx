@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { MainPage } from './pages/MainPage/MainPage';
 import { CharacterPage } from './pages/CharacterPage/CharacterPage'
-import { Error } from './pages/Error/Error'
+import { Error404 } from './pages/Error404/Error404'
 
 export const Main = () => {
     return ( 
@@ -13,7 +13,7 @@ export const Main = () => {
                 </Route>
                 <Route exact path='/character/:id' children={<CharacterPage />} />
                 <Route exact path='*'>
-                    <Error />
+                    <Error404 />
                 </Route>
             </Switch>
       </Router>
